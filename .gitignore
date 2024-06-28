@@ -1,32 +1,25 @@
-# Diretórios do módulo Go
 /bin/
 /pkg/
 /vendor/
 
-# Executáveis
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
 
-# Diretório de compilação
 build/
 dist/
 
-# Arquivos de cache
 *.log
 *.cache
 *.tmp
 
-# Arquivos de teste
 *.test
 
-# Arquivos de configuração local
 .env
 .env.local
 
-# IDEs e editores
 .vscode/
 .idea/
 *.swp
@@ -34,12 +27,9 @@ dist/
 *~
 .DS_Store
 
-# Dependências gerenciadas pelo Go Modules
 /go.sum
 
-# Cobertura de testes
 *.out
 
-# Binários do projeto
 /sdman
 /sdman.exe

@@ -21,12 +21,10 @@ func Execute() {
 }
 
 func init() {
-	// Aqui você pode adicionar subcomandos como list, install, use, etc.
 	var listCmd = &cobra.Command{
 		Use:   "list",
 		Short: "List available SDK versions",
 		Run: func(cmd *cobra.Command, args []string) {
-			// Lógica para listar versões disponíveis
 			fmt.Println("List of available SDK versions")
 		},
 	}
@@ -37,7 +35,6 @@ func init() {
 		Args:  cobra.MinimumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			version := args[0]
-			// Lógica para instalar a versão especificada
 			fmt.Printf("Installing SDK version %s\n", version)
 		},
 	}
@@ -48,7 +45,6 @@ func init() {
 		Args:  cobra.MinimumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			version := args[0]
-			// Lógica para configurar a versão especificada como padrão
 			fmt.Printf("Using SDK version %s\n", version)
 		},
 	}
