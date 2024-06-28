@@ -19,18 +19,3 @@ func Execute() {
 		os.Exit(1)
 	}
 }
-
-func init() {
-
-	var installCmd = &cobra.Command{
-		Use:   "install [version]",
-		Short: "Install a specific SDK version",
-		Args:  cobra.MinimumNArgs(1),
-		Run: func(cmd *cobra.Command, args []string) {
-			version := args[0]
-			fmt.Printf("Installing SDK version %s\n", version)
-		},
-	}
-
-	rootCmd.AddCommand(installCmd)
-}
