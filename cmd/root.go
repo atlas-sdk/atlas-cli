@@ -21,13 +21,6 @@ func Execute() {
 }
 
 func init() {
-	var listCmd = &cobra.Command{
-		Use:   "list",
-		Short: "List available SDK versions",
-		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("List of available SDK versions")
-		},
-	}
 
 	var installCmd = &cobra.Command{
 		Use:   "install [version]",
@@ -39,6 +32,5 @@ func init() {
 		},
 	}
 
-	rootCmd.AddCommand(listCmd)
 	rootCmd.AddCommand(installCmd)
 }
