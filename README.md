@@ -1,1 +1,1 @@
-Gerar build: ``go build -o sdman.exe``
+Gerar build: ``go build -o atlas.exe``
