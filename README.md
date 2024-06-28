@@ -1,0 +1,1 @@
+Gerar build: ``go build -o sdman.exe``
