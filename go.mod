@@ -1,4 +1,4 @@
-module sdman-go
+module atlas-cli
 
 go 1.22.4
 

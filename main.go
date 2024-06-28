@@ -1,9 +1,9 @@
 package main
 
 import (
-    "sdman-go/cmd"
+	"atlas-cli/cmd"
 )
 
 func main() {
-    cmd.Execute()
+	cmd.Execute()
 }
