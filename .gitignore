@@ -27,9 +27,5 @@ dist/
 *~
 .DS_Store
 
-/go.sum
 
 *.out
-
-/sdman
-/sdman.exe
