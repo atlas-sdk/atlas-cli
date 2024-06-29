@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"atlas-cli/sdk"
+	"atlas-cli/sdk/service"
 	"fmt"
 	"github.com/spf13/cobra"
 )
@@ -13,7 +13,7 @@ var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List available JDK versions",
 	Run: func(cmd *cobra.Command, args []string) {
-		versions, err := sdk.ListAvailableJDKVersions(osFlag, javaVersionFlag)
+		versions, err := service.ListAvailableJDKVersions(osFlag, javaVersionFlag)
 		if err != nil {
 			fmt.Println("Error listing versions:", err)
 			return
