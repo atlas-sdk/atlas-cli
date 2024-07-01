@@ -1,8 +1,10 @@
 package cmd
 
 import (
+	"atlas-cli/sdk"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"runtime"
@@ -49,10 +51,17 @@ var installCmd = &cobra.Command{
 			return
 		}
 
-		err = downloadFile(dist+"-"+version+".zip", downloadURL)
+		var nameZip = dist + "-" + version + ".zip"
+
+		err = downloadFile(nameZip, downloadURL)
 		if err != nil {
 			fmt.Println("Error downloading file:", err)
 			return
+		}
+
+		errZip := sdk.UnzipSource(nameZip, "jdk")
+		if errZip != nil {
+			log.Fatal(errZip)
 		}
 
 		fmt.Println("Download complete.")
