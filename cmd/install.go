@@ -49,7 +49,9 @@ var installCmd = &cobra.Command{
 			return
 		}
 
-		err = downloadFile(dist+"-"+version+".zip", downloadURL)
+		var nameZip = dist + "-" + version + ".zip"
+
+		err = downloadFile(nameZip, downloadURL)
 		if err != nil {
 			fmt.Println("Error downloading file:", err)
 			return
