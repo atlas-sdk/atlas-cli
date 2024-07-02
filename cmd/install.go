@@ -28,14 +28,17 @@ var installCmd = &cobra.Command{
 		}
 
 		var downloadURL string
+		var versionJDK string
 		for _, distribution := range jdk.Distributions {
 			if distribution.Name == dist {
 				if releases, ok := distribution.Versions[version]; ok {
 					for _, release := range releases {
 						if runtime.GOOS == "linux" {
 							downloadURL = release.URLs.Linux
+							versionJDK = release.Version
 						} else if runtime.GOOS == "windows" {
 							downloadURL = release.URLs.Windows
+							versionJDK = release.Version
 						}
 						break
 					}
@@ -59,6 +62,12 @@ var installCmd = &cobra.Command{
 		errZip := sdk.UnzipSource(nameZip, "jdk")
 		if errZip != nil {
 			log.Fatal(errZip)
+		}
+
+		err = sdk.AddToPath("./jdk/" + versionJDK + "bin")
+		if err != nil {
+			fmt.Printf("Erro ao adicionar o diretório ao PATH: %v\n", err)
+			return
 		}
 
 		fmt.Println("Download complete.")
